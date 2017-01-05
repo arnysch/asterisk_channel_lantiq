@@ -1976,14 +1976,8 @@ static int load_module(void)
 		tone.simple.index = TAPI_TONE_LOCALE_DIAL_CODE;
 		tone.simple.freqA = 425;
 		tone.simple.levelA = -150;
-		tone.simple.cadence[0] = 200;
-		tone.simple.cadence[1] = 300;
-		tone.simple.cadence[2] = 700;
-		tone.simple.cadence[3] = 800;
+		tone.simple.cadence[0] = 1000;
 		tone.simple.frequencies[0] = IFX_TAPI_TONE_FREQA;
-		tone.simple.frequencies[1] = IFX_TAPI_TONE_FREQNONE;
-		tone.simple.frequencies[2] = IFX_TAPI_TONE_FREQA;
-		tone.simple.frequencies[3] = IFX_TAPI_TONE_FREQNONE;
 		tone.simple.loop = 0;
 		tone.simple.pause = 0;
 		if (ioctl(dev_ctx.ch_fd[c], IFX_TAPI_TONE_TABLE_CFG_SET, &tone)) {
@@ -2012,8 +2006,8 @@ static int load_module(void)
 		tone.simple.index = TAPI_TONE_LOCALE_BUSY_CODE;
 		tone.simple.freqA = 425;
 		tone.simple.levelA = -150;
-		tone.simple.cadence[0] = 500;
-		tone.simple.cadence[1] = 500;
+		tone.simple.cadence[0] = 480;
+		tone.simple.cadence[1] = 480;
 		tone.simple.frequencies[0] = IFX_TAPI_TONE_FREQA;
 		tone.simple.frequencies[1] = IFX_TAPI_TONE_FREQNONE;
 		tone.simple.loop = 0;
@@ -2028,8 +2022,8 @@ static int load_module(void)
 		tone.simple.index = TAPI_TONE_LOCALE_CONGESTION_CODE;
 		tone.simple.freqA = 425;
 		tone.simple.levelA = -150;
-		tone.simple.cadence[0] = 250;
-		tone.simple.cadence[1] = 250;
+		tone.simple.cadence[0] = 240;
+		tone.simple.cadence[1] = 240;
 		tone.simple.frequencies[0] = IFX_TAPI_TONE_FREQA;
 		tone.simple.frequencies[1] = IFX_TAPI_TONE_FREQNONE;
 		tone.simple.loop = 0;
