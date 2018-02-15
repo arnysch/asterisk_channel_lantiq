@@ -47,8 +47,6 @@
 
 #include "asterisk.h"
 
-ASTERISK_FILE_VERSION(__FILE__, "$Revision: xxx $")
-
 #include <ctype.h>
 #include <sys/socket.h>
 #include <sys/time.h>
@@ -1710,6 +1708,9 @@ static void lantiq_cleanup(void)
 		if (ioctl(dev_ctx.ch_fd[c], IFX_TAPI_DEC_STOP, 0)) {
 			ast_log(LOG_WARNING, "IFX_TAPI_DEC_STOP ioctl failed\n");
 		}
+
+		close(dev_ctx.ch_fd[c]);
+		dev_ctx.ch_fd[c] = -1;
 		led_off(dev_ctx.ch_led[c]);
 	}
 
